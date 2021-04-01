@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  background-color: #eee;
+}
+
+figure.Sirv {
+  width: 100vw;
+  height: 100vh;
+}
+
+.link {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 15px;
+  width: 200px;
+  height: 200px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-image: url('/assets/img/artists-thumbs/Sofia-Merlin.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
