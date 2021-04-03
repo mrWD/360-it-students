@@ -2,7 +2,7 @@ AFRAME.registerComponent('set-image', {
   schema: {
     on: { type: 'string' },
     target: { type: 'selector' },
-    src: { type: 'string' },
+    url: { type: 'string' },
     dur: { type: 'number', default: 300 },
   },
 
@@ -11,11 +11,12 @@ AFRAME.registerComponent('set-image', {
     const el = this.el;
 
     el.addEventListener(data.on, function () {
+      console.log(data.url);
       setTimeout(function () {
-        if (!data.src) {
+        if (!data.url) {
           history.back();
         } else {
-          window.location.assign(data.src);
+          window.location.assign(data.url);
         }
       }, data.dur);
     });

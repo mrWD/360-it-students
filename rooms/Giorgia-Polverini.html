@@ -20,9 +20,9 @@
         <img id="main-room-image" crossorigin="anonymous" src="/assets/img/artists-works/main-room.jpg" />
 
         <!-- Top Artists works -->
-        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Sofia-Merlin.jpg" />
-        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Monti.jpg" />
-        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Scardino.jpg" />
+        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Giorgia-Polverini.jpg" />
+        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Giorgia-Polverini.jpg" />
+        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Giorgia-Polverini.jpg" />
 
         <!-- Each Artist Block settings -->
         <script id="link" type="text/html">
@@ -34,7 +34,7 @@
             event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
             event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
             event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; target: #main-room-container; src: ${src}"
+            set-image="on: click; url: ${url}"
           >
           </a-entity>
         </script>
@@ -46,11 +46,11 @@
       <!-- Artists block -->
       <a-entity id="links0" layout="type: line; margin: 1.5" position="-2.25 0 -4">
         <!-- Exit link -->
-        <a-entity template="src: #link" data-src="" data-thumb="#exit-thumb"></a-entity>
+        <a-entity template="src: #link" data-url="" data-thumb="#exit-thumb"></a-entity>
         <!-- The First project link -->
-        <a-entity template="src: #link" data-src="/works/Giorgia-Polverini/video-1.html" data-thumb="#project1-thumb"></a-entity>
+        <a-entity template="src: #link" data-url="/works/Giorgia-Polverini/video-1.html" data-thumb="#project1-thumb"></a-entity>
         <!-- The Second project link -->
-        <a-entity template="src: #link" data-src="/works/Giorgia-Polverini/video-2.html" data-thumb="#project2-thumb"></a-entity>
+        <a-entity template="src: #link" data-url="/works/Giorgia-Polverini/video-2.html" data-thumb="#project2-thumb"></a-entity>
       </a-entity>
 
       <!-- Camera settings -->

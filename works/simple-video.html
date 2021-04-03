@@ -34,7 +34,7 @@
             event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
             event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
             event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; target: #main-room-container; src: ${src}"
+            set-image="on: click; url: ${url}"
           >
           </a-entity>
         </script>
@@ -44,12 +44,12 @@
       <a-sky id="main-room-container" material="color: #eee"></a-sky>
 
       <!-- Artists block -->
-      <a-entity id="links0" layout="type: line; margin: 1.5" position="-5 0 0" rotation="0 90 0">
+      <a-entity id="links0" layout="type: line; margin: 1.5" position="-3 0 -2" rotation="0 45 0">
         <!-- Exit link -->
-        <a-entity template="src: #link" data-src="" data-thumb="#exit-thumb"></a-entity>
+        <a-entity template="src: #link" data-url="" data-thumb="#exit-thumb"></a-entity>
       </a-entity>
 
-      <!-- The Photo of the Artist -->
+      <!-- The Video of the Artist -->
       <a-video geometry="width: 10; height: 6;" position="0 0 -5" src="/assets/videos/test-video.mp4"></a-video>
 
       <!-- Camera settings -->
