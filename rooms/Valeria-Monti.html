@@ -41,16 +41,17 @@
       </a-assets>
 
       <!-- Background block -->
-      <a-sky id="main-room-container" material="color: #eee"></a-sky>
+      <a-sky id="main-room-container" radius="10" material="color: #eee"></a-sky>
 
       <!-- Artists block -->
-      <a-entity id="links0" layout="type: line; margin: 1.5" position="-5 0 0" rotation="0 90 0">
+      <a-entity id="links0" layout="type: line; margin: 1.5" position="-2.25 0 -4">
         <!-- Exit link -->
         <a-entity template="src: #link" data-src="" data-thumb="#exit-thumb"></a-entity>
+        <!-- The First project link -->
+        <a-entity template="src: #link" data-src="/works/Valeria-Monti/photo.html" data-thumb="#project1-thumb"></a-entity>
+        <!-- The Second project link -->
+        <a-entity template="src: #link" data-src="/works/Valeria-Monti/video.html" data-thumb="#project2-thumb"></a-entity>
       </a-entity>
-
-      <!-- The Photo of the Artist -->
-      <a-video geometry="width: 10; height: 6;" position="0 0 -5" src="/assets/videos/test-video.mp4"></a-video>
 
       <!-- Camera settings -->
       <a-entity camera look-controls>

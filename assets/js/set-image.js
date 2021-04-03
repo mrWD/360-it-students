@@ -15,7 +15,7 @@ AFRAME.registerComponent('set-image', {
         if (!data.src) {
           history.back();
         } else {
-          window.location.assign(`/${data.src}`);
+          window.location.assign(data.src);
         }
       }, data.dur);
     });
