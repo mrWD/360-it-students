@@ -20,9 +20,9 @@
         <img id="main-room-image" crossorigin="anonymous" src="/assets/img/artists-works/main-room.jpg" />
 
         <!-- Top Artists works -->
-        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Zaira-Fiallo.jpg" />
-        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Zaira-Fiallo.jpg" />
-        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Zaira-Fiallo.jpg" />
+        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Sofia-Merlin.jpg" />
+        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Monti.jpg" />
+        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Scardino.jpg" />
 
         <!-- Each Artist Block settings -->
         <script id="link" type="text/html">
@@ -41,17 +41,16 @@
       </a-assets>
 
       <!-- Background block -->
-      <a-sky id="main-room-container" radius="10" material="color: #eee"></a-sky>
+      <a-sky id="main-room-container" material="color: #eee"></a-sky>
 
       <!-- Artists block -->
-      <a-entity id="links0" layout="type: line; margin: 1.5" position="-2.25 0 -4">
+      <a-entity id="links0" layout="type: line; margin: 1.5" position="-5 0 0" rotation="0 90 0">
         <!-- Exit link -->
         <a-entity template="src: #link" data-url="" data-thumb="#exit-thumb"></a-entity>
-        <!-- The First project link -->
-        <a-entity template="src: #link" data-url="/works/Zaira-Fiallo/photo-360.html" data-thumb="#project1-thumb"></a-entity>
-        <!-- The Second project link -->
-        <a-entity template="src: #link" data-url="/works/Zaira-Fiallo/video.html" data-thumb="#project2-thumb"></a-entity>
       </a-entity>
+
+      <!-- The Photo of the Artist -->
+      <a-image geometry="width: 15; height: 5;" position="0 0 -5" src="/assets/img/artists-works/main-room.jpg"></a-image>
 
       <!-- Camera settings -->
       <a-entity camera look-controls>
