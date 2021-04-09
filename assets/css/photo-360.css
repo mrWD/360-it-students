@@ -1,9 +1,11 @@
 body {
   margin: 0;
   background-color: #eee;
+  overflow: hidden;
 }
 
-figure.Sirv {
+figure.Sirv,
+iframe {
   width: 100vw;
   height: 100vh;
 }
@@ -17,7 +19,7 @@ figure.Sirv {
   height: 200px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background-image: url('/assets/img/artists-thumbs/Sofia-Merlin.jpg');
+  background-image: url('/assets/img/artist-room.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

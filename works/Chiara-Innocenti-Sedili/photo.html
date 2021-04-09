@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>CMS A-Frame v1.0</title>
-    <meta name="description" content="CMS A-Frame" />
+    <title>Chiara Innocenti Sedili</title>
+    <meta name="description" content="Chiara Innocenti Sedili" />
 
     <script src="/assets/libs/aframe/aframe.min.js"></script>
     <script src="/assets/libs/aframe/aframe-animation-component.min.js"></script>
@@ -17,12 +17,10 @@
     <a-scene>
       <a-assets>
         <!-- Main room background -->
-        <img id="main-room-image" crossorigin="anonymous" src="/assets/img/artists-works/main-room.jpg" />
+        <img id="main-room-image" crossorigin="anonymous" src="/assets/img/main-room.jpg" />
 
         <!-- Top Artists works -->
-        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Sofia-Merlin.jpg" />
-        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Monti.jpg" />
-        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Scardino.jpg" />
+        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artist-room.jpg" />
 
         <!-- Each Artist Block settings -->
         <script id="link" type="text/html">
@@ -49,8 +47,11 @@
         <a-entity template="src: #link" data-url="" data-thumb="#exit-thumb"></a-entity>
       </a-entity>
 
-      <!-- The Photo of the Artist -->
-      <a-image geometry="width: 15; height: 5;" position="0 0 -5" src="/assets/img/artists-works/main-room.jpg"></a-image>
+      <!-- The 1st Photo of the Artist -->
+      <a-image geometry="width: 6; height: 9;" position="0 0 -5" src="/assets/img/artists-works/chiara-sedili-innocenti-1.jpeg"></a-image>
+
+      <!-- The 2d Photo of the Artist -->
+      <a-image geometry="width: 6; height: 9;" position="5 0 0" rotation="0 -90 0" src="/assets/img/artists-works/chiara-sedili-innocenti-2.jpeg"></a-image>
 
       <!-- Camera settings -->
       <a-entity camera look-controls>
