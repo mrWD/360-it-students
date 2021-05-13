@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dysfunctional_wands</title>
+    <meta name="description" content="Dysfunctional_wands" />
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/favicon.ico"/>
+
+    <script src="/assets/libs/aframe/aframe.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-animation-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-event-set-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-layout-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
+
+    <script src="/assets/js/set-image.js"></script>
+    <script src="/assets/js/set-text.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Main room background -->
+        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/exit-thumbnail.jpg" />
+
+        <p id="text">
+          Mostra a cura di: Ivana Spinelli e Rebecca Agnes
+
+          Testo critico redatto da: Sofia Merlin,
+          Federica Amaddii Barbagli, Melissa Ferretti,
+          Valeria Monti, Anna Tappari e Giorgia Polverini
+
+          Pagina Instagram gestita da: Elisa Cocchi,
+            Giorgia Toselli, Sara Magni, Ylenia Joiner Santurio e Martina Paganelli
+
+          Sito web creato dal web developer Viktor Lavrov, Beatrice Matassi e Valeria Scardino
+        </p>
+
+        <p id="text2">
+          "Dysfunctional Wands" è il calderone nato dal workshop di Rebecca Agnes con giovani autrici all'Accademia di Belle Arti di Bologna, nel corso di Scultura di Ivana Spinelli.
+
+          Quello che ne è nato è un progetto multisfaccettato dal nome "Dysfunctional Wands", che sfrutta sia le possibilità del web, con la creazione di un ambiente virtuale a 360 e l'utilizzo dei social, che l'opportunità di incontrarsi nel mondo reale - nel meatspace - grazie allo spazio offerto da OFV Studio, in collaborazione con Goodwill Network.
+
+          Il laboratorio chiedeva alle partecipanti di formulare un desiderio riguardante la sfera sociale concretizzandolo in una "bacchetta magica" che lo potesse esaudire. Le "bacchette" prodotte sono oggetti/video/installazioni/performance che esprimono diverse posizioni ed esigenze, critiche, denunce e suggerimenti per una società più giusta e inclusiva. La bacchetta si affianca allo scettro, perchè accanto alla visionarietà della magia è sempre necessario attivare un potere politico per poter raggiungere gli obiettivi prefissati e ri-plasmare la realtà.
+          In questo senso si è favorita una pratica artistica immersiva dove le autrici di esperienza diversa portano avanti un dialogo, di formalizzazione delle idee, amicizia, auto organizzazione, contribuendo in ruoli diversi non solo al proprio lavoro ma al nutrimento del progetto comune.
+        </p>
+
+        <p id="text3">
+          Dysfunctional Wands è un progetto che nasce dalla collaborazione tra l'artista Rebecca Agnes, l'artista, nonchè professoressa Ivana Spinelli e noi studentesse dell'indirizzo di scultura dell'Accademia di Belle Arti di Bologna.
+          La ricerca di Rebecca Agnes volge ad indagare una coscienza sociale, che mira a creare uno scambio all'interno della collettività.
+          Partendo dalla richiesta dell'artista di riflettere su un nostro desiderio sociale, abbiamo creato, nel pratico, delle bacchette magiche disfunzionali, in cui convergono i nostri sogni.
+          Ognuna ha interpretato anche il desiderio di un'altra, creando così uno scambio di visioni e possibilità.
+          La magia di queste bacchette si concentra nelle speranze che vi sono riposte, nell'essere punti di partenza per la creazione di un mondo e un futuro migliore.
+          Musei e luoghi d'arte sono chiusi, ma il desiderio di confronto è ancora forte.
+          Per far fronte alle difficoltà in cui viviamo, abbiamo creato una mostra che avrà luogo in via Donato Creti 69/2 a Bolognail il 14 maggio dalle 15 alle 19, e un'altra interattiva a 360, accessibile da una pagina instagram.
+          In conclusione, la mostra, si pone l'obbiettivo di rendere manifesti i desideri come specchio e istantanea dei sogni e bisogni della società di oggi.
+        </p>
+
+        <!-- Each Artist Block settings -->
+        <script id="link" type="text/html">
+          <a-entity
+            class="link"
+            geometry="primitive: circle; radius: ${radius}"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; url: ${url}"
+          >
+          </a-entity>
+          <a-text position="0 -1 0" align="center" color="#222" width="5" value="${text}"></a-text>
+        </script>
+      </a-assets>
+
+      <!-- Background block -->
+      <a-sky material="color: #fff"></a-sky>
+
+      <!-- Exit link -->
+      <a-entity
+        template="src: #link"
+        position="0 0 4"
+        rotation="0 180 0"
+        data-radius="0.65"
+        data-thumb="#exit-thumb"
+        data-url="/"
+        data-text="<<"
+      ></a-entity>
+
+      <!-- Artists block -->
+      <a-text
+        width="8"
+        position="-6 0 0"
+        rotation="0 90 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text"
+        set-text
+      ></a-text>
+
+      <a-text
+        width="8"
+        position="0 0 -6"
+        rotation="0 0 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text2"
+        set-text
+      ></a-text>
+
+      <a-text
+        width="8"
+        position="6 0 0"
+        rotation="0 -90 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text3"
+        set-text
+      ></a-text>
+
+      <!-- Camera settings -->
+      <a-entity camera look-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"
+        ></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dysfunctional_wands</title>
+    <meta name="description" content="Dysfunctional_wands" />
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/favicon.ico"/>
+
+    <script src="/assets/libs/aframe/aframe.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-animation-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-event-set-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-layout-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
+
+    <script src="/assets/js/set-image.js"></script>
+    <script src="/assets/js/set-text.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Main room background -->
+        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Zaira-Fiallo.jpg" />
+
+        <p id="text">
+          Obsession
+
+          Video installazione a colori, durata 1'30", 2021
+
+          Distruggere è un'azione attiva; non è come tentare passivamente di dimenticare e "lasciarsi alle spalle", "lasciare scorrere" delle esperienze.
+          Quando entra in gioco l'ossessione, emotiva, materiale, che può essere di se stessi, dei propri manufatti, ma anche affettiva, dei soldi, del costruirsi una vita basata su un benessere che in realtà è fallace, essa diventa come una bolla che ti isola da ogni consapevolezza e lucidità da cosa si sta realmente facendo e vivendo.
+          Il concetto è materializzato nei fili rossi, un medium morbido che viene inglobato da un medium rigido: il gesso, che viene distrutto per liberarli senza pietà.
+        </p>
+
+        <p id="text2">
+          No solution → just anger
+
+          Giornali quotidiani, pittura acrilica 100 x 160 cm, 2021
+
+          Ci sono dinamiche sociali negative che sembrano destinate a non cessare mai. Come la divisione piramidale della società, l'abuso di potere, discriminazioni, che portano a guerre, carestie, dittature.
+          Davanti a questi problemi globali ci si sente costantemente impotenti; è anche vero che piccole azioni da parte di ognuno di noi portano a grandi risultati ma mantenere una speranza costante è complicato perchè il processo è molto lento e tortuoso.
+        </p>
+
+        <p id="text3">
+          Sembra che solo una magia o un miracolo possa risolvere i prodotti tossici e distruttivi che nei secoli l'uomo ha creato e che hanno fatto sviluppare odio e repressione. Posso immaginarmi un mondo nuovo e mettere nero su bianco idee e soluzioni per risolvere i problemi di questo mondo imperfetto, ma le magie non le so fare. Realisticamente sono impotente, come tutti. La mia rabbia nei confronti del male mondiale è immatura, non vedo soluzione, non riesco ad accettare, di conseguenza penso solo a sfogarmi; la mia rabbia esternata è quella dell'adolescente che scrive quello che pensa e che sente sui muri della città o sulle pareti della cameretta.
+        </p>
+
+        <!-- Each Artist Block settings -->
+        <script id="link" type="text/html">
+          <a-entity
+            class="link"
+            geometry="primitive: circle; radius: ${radius}"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; url: ${url}"
+          >
+          </a-entity>
+          <a-text position="0 -1 0" align="center" color="#222" width="5" value="${text}"></a-text>
+        </script>
+      </a-assets>
+
+      <!-- Background block -->
+      <a-sky material="color: #fff"></a-sky>
+
+      <!-- Exit link -->
+      <a-entity
+        template="src: #link"
+        position="0 0 4"
+        rotation="0 180 0"
+        data-radius="0.65"
+        data-thumb="#exit-thumb"
+        data-url="/rooms/Zaira-Fiallo.html"
+        data-text="<<"
+      ></a-entity>
+
+      <!-- Artists block -->
+      <a-text
+        width="8"
+        position="-4.5 0 0"
+        rotation="0 90 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text"
+        set-text
+      ></a-text>
+
+      <a-text
+        width="8"
+        position="0 0 -4"
+        rotation="0 0 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text2"
+        set-text
+      ></a-text>
+
+      <a-text
+        width="8"
+        position="4.5 0 0"
+        rotation="0 -90 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text3"
+        set-text
+      ></a-text>
+
+      <!-- Camera settings -->
+      <a-entity camera look-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"
+        ></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

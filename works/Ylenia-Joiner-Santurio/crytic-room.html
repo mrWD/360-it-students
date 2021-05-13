@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dysfunctional_wands</title>
+    <meta name="description" content="Dysfunctional_wands" />
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/favicon.ico"/>
+
+    <script src="/assets/libs/aframe/aframe.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-animation-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-event-set-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-layout-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
+
+    <script src="/assets/js/set-image.js"></script>
+    <script src="/assets/js/set-text.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Main room background -->
+        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Ylenia-Joiner-Santurio.jpg" />
+
+        <p id="text">
+          Niente di meno
+
+          Legno, chiodi e una penna, 2m x 30cm, 2021
+
+          "Niente in meno" è il titolo che ho voluto dare al mio desiderio poichè parlando di equità bisognerebbe che tutti avessero una possibilità di compiere la loro strada.
+          Ognuno di noi dovrebbe essere fornito di un mezzo comune per arrivare in alto, arrivare ad una meta, chiaramente non uguale per tutti, ma a tutti dovuta.
+          Per questo motivo ho realizzato una semplice scala, in cui poter segnare i propri traguardi, uno strumento semplice conosciuto da tutti, ma che tutti non hanno.
+        </p>
+
+        <p id="text2">
+          Decay
+
+          Gesso, rete metallica, martello, video, 28", 2021
+
+          "Decay" è il titolo che ho voluto dare al desiderio che mi è stato donato, che parla di un mondo privo di denaro e di bramosia di potere. 
+          Per questo, ho scelto un titolo impegnativo e una situazione che non è facilmente visibile quando si parla di grandi costruzioni, grandi potenze. 
+          Ho quindi fatto la prima mossa, in modo simbolico, invitando lo spettatore a creare una grande catena per far cadere  quel che, alla fine, è solo un mucchio di cocci.
+        </p>
+
+        <!-- Each Artist Block settings -->
+        <script id="link" type="text/html">
+          <a-entity
+            class="link"
+            geometry="primitive: circle; radius: ${radius}"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; url: ${url}"
+          >
+          </a-entity>
+          <a-text position="0 -1 0" align="center" color="#222" width="5" value="${text}"></a-text>
+        </script>
+      </a-assets>
+
+      <!-- Background block -->
+      <a-sky material="color: #fff"></a-sky>
+
+      <!-- Exit link -->
+      <a-entity
+        template="src: #link"
+        position="0 0 4"
+        rotation="0 180 0"
+        data-radius="0.65"
+        data-thumb="#exit-thumb"
+        data-url="/rooms/Ylenia-Joiner-Santurio.html"
+        data-text="<<"
+      ></a-entity>
+
+      <!-- Artists block -->
+      <a-text
+        width="8"
+        position="0 0 -4"
+        rotation="0 0 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text"
+        set-text
+      ></a-text>
+
+      <a-text
+        width="8"
+        position="4.5 0 0"
+        rotation="0 -90 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
+        align="center"
+        color="#222"
+        value="#text2"
+        set-text
+      ></a-text>
+
+      <!-- Camera settings -->
+      <a-entity camera look-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"
+        ></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
